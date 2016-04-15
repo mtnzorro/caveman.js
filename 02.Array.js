@@ -44,7 +44,16 @@ return newArr;
 
 // `Array.prototype.unshift` adds an value to the start of an array.
 var unshift = function(array, value) {
+  var temp = [];
+  temp[0] = value;
 
+ for(i = 0; i < array.length; i++){
+  temp[i+1] = array[i];
+ }
+ for(i = 0; i < temp.length; i++){
+  array[i] = temp[i];
+ } 
+return array.length;
 };
 
 
