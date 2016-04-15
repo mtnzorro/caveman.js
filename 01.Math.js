@@ -32,10 +32,10 @@ var ceiling = function(number) {
 
 // `Math.abs` returns the absolute value of a number.
 var abs = function(number) {
-  if((-number) + number === 0){
-  	return -(number);
+   if(number < 0){
+      return (number * -1);
   }
-  return number;	
+return number
 };
 
 
