@@ -24,14 +24,21 @@ var pop = function(array) {
 // `Array.prototype.push` is just the opposite of `pop`, adding a new
 // value to the end of an array, and returning the new length.
 var push = function(array, value) {
-
+  array[array.length] = value;
+  return array.length;
 };
 
 
 // `Array.prototype.shift` removes the first element from an array.
 // This won't be quite as simple as `pop` was.
 var shift = function(array) {
-
+  var newArr = array[0];
+  var shiftArr = [];
+for(var i = 1; i < array.length; i++){
+    array[i-1] = array[i];
+  }
+if (array.length) array.length--;
+return newArr;
 };
 
 
