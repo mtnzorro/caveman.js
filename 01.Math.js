@@ -67,12 +67,20 @@ var pow = function(base, exponent) {
 // `Math.max` is a function that that compares any number of numbers
 // and returns the largest. Let's make a version that compares two.
 var max = function(x, y) {
-
+ if (y > x){
+ 	return y;
+ }
+ return x;
 };
 
 
 // I bet you can guess what `Math.min` is suppossed to do. This time,
 // use the `arguments` keyword so that we can compare more than two.
 var min = function() {
-
+  var arr = [];
+    for (var i = 0; i < arguments.length; i++){
+      arr[i]= arguments[i];
+    }
+  arr = arr.sort(function(a,b){return a -b});
+  return arr[0];
 };
