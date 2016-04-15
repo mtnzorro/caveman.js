@@ -61,8 +61,18 @@ return array.length;
 // string with an optional delimiter string in between each one. If no 
 // delimiter is provided, it should use a comma.
 var join = function(array, delim) {
+  if (delim === undefined){
+  delim = ",";
+}
+var str = '';
+for(i = 0; i < array.length - 1; i++){
+ str += array[i] + delim;    
+}
+str += array[array.length - 1];
+return str;
 
 };
+
 
 
 // `Array.prototype.reverse`, as you might expect, takes an array and 
