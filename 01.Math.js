@@ -19,13 +19,23 @@ var floor = function(number) {
 
 // `Math.ceiling` also rounds a to a whole number, but it rounds up.
 var ceiling = function(number) {
-
+  var r = number % 1;
+  if (!r){
+  	return number
+  }
+  if (number < 0){
+  	return number - ( 1 + r) + 1
+  }   
+  return number - r + 1;
 };
 
 
 // `Math.abs` returns the absolute value of a number.
 var abs = function(number) {
-
+  if((-number) + number === 0){
+  	return -(number);
+  }
+  return number;	
 };
 
 
