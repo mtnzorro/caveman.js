@@ -42,7 +42,25 @@ return number
 // As JavaScript doesn't have an exponent operator, you'll need 
 // `Math.pow` to raise a number to a power. Too bad you can't use that.
 var pow = function(base, exponent) {
-
+  
+  if (exponent === 0){
+  	return 1;
+  }
+  if (exponent < 0){
+    exponent = exponent * -1;
+    var neg = true;	
+  }
+  if(exponent === 1){
+  	return base;
+  }
+  var constant = base;
+  for(var i = 2; i <= exponent; i++){
+    base = base * constant;
+  }
+  if (neg){
+    return 1/base;	
+  }
+  return base;
 };
 
 
