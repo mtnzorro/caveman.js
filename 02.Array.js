@@ -97,5 +97,37 @@ var reverse = function(array) {
 // new larger array. You may find some of your previous functions useful 
 // here too. Note that concat does not mutate any of the original arrays!
 var concat = function() {
+  
+  
+  var arr = [];
+  var concatArr = [];
+    for (var key in arguments){
+      push(arr, arguments[key]);
+    }
+    
+  var len = arr.length;
+    for (var i = 0; i < len; i++){
+     
+     var x = shift(arr);
+     
+     if( typeof x != 'object'){
+      push(concatArr,[x]);
+      } else {
+          push(concatArr,x);
+      } 
+  //console.log(typeof x);
+  }
+      
+       var finalArr = [];
+for (var j = 0; j < concatArr.length; j++){
+     for(var k = 0; k < concatArr[j].length; k++){
+     
+       push(finalArr, concatArr[j][k]);
+      
+      }
+     }      
+    
+   return finalArr; 
 
 };
+
