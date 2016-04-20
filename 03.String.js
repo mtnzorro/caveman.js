@@ -134,4 +134,40 @@ var trim = function(string) {
 // string and replacing it. Note that only the first instance is replaced.
 var replace = function(string, target, replacement) {
 
+	var replacementArr = [];
+	var finalArr = [];
+	var space = false;
+
+	if(target === ''){
+		push(finalArr,replacement);
+		push(finalArr, string);
+		string = join(finalArr,'');
+		return string;
+	}
+
+	for(var u = 0; u<string.length; u++){
+		if(string[u] === " "){
+		replacementArr = split(string, ' ');
+		space = true;
+		u = u+string.length;
+		} else {
+		replacementArr = split(string, '');
+	}
+		}
+	
+	for (var i=0; i<replacementArr.length; i++){
+		if(replacementArr[i] === target){
+			push(finalArr, replacement)
+			target = undefined;
+		} else{
+		push(finalArr,replacementArr[i])
+		}
+	}
+	if(space){
+	string = join(finalArr,' ');
+	return string;
+	}
+	string = join(finalArr, '');
+	return string;
+
 };
