@@ -49,6 +49,7 @@ return arr;
 // `String.prototype.split` can return an array based on a string by 
 // breaking it up using a delimiter string. The delimiter is not 
 // included in the final array.
+
 var split = function(string, delim) {
   
     var arr = [];
@@ -81,7 +82,8 @@ var split = function(string, delim) {
      };
      
      if (final.length === 0){
-         return final
+         undefArr[0] = string;
+          return undefArr;
      }
      final[final.length] = string.length;
      
@@ -107,6 +109,23 @@ var split = function(string, delim) {
 // It returns the input string with all white space removed from the
 // beginning and the end. 
 var trim = function(string) {
+	
+	var allButWhite = [];
+	var trimmedArr = [];
+	var whitespaces = ['\f', '\n', '\r', '\t', '\v','\xA0', '\u00A0','\u2028','\u2029' ]
+	for(var i = 0; i < whitespaces.length; i++){
+	var a = split(string,whitespaces[i]);
+	string = join(a,'');
+	
+	};
+	allButWhite= split(string,' ');
+    for(j = 0; j < allButWhite.length; j++){
+        if(allButWhite[j] != ''){
+            push(trimmedArr,allButWhite[j]);
+        }
+    }
+    string = join(trimmedArr, " ");
+    return string;
 
 };
 
